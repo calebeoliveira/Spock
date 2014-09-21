@@ -9,16 +9,16 @@ Example:
 ```
 $spock = new Spock\Spock('imgID', '1 hour');
 
-// Ties to recover
+// Tries to recover...
 $img = $spock->fetch();
 
-// Enter here if the recover fails
+// If the recover fails...
 if($img === false) {
 	$img = new LazyGDLibrary('param');
 	$spock->push($img);
 }
 
-// ...
+$img->makeSomeMagic();
 ```
 
 The above example shows a simple case where Spock attempts to recover an object identified as 'imgID' from the file system. If they find it, will put in `$img` variable. Otherwise, will process as usual, and save the result. 
